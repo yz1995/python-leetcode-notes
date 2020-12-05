@@ -1,0 +1,11 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        i=0
+        while i<len(matrix):
+            j=i+1
+            while j<len(matrix):
+                matrix[i][j]=matrix[i][j]^matrix[j][i]    #异或操作，原地修改矩阵
+                matrix[j][i]=matrix[i][j]^matrix[j][i]
+                matrix[i][j]=matrix[i][j]^matrix[j][i]
+                j+=1
+            i+=1
